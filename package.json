@@ -4,6 +4,7 @@
   "description": "App with react and node",
   "main": "server.js",
   "scripts": {
+    "dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +21,7 @@
     "nodemon": "^1.12.6"
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "express": "^4.16.2"
   }
 }
