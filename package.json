@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/giumacedo/front-end-test/issues"
   },
-  "homepage": "https://github.com/giumacedo/front-end-test#readme"
+  "homepage": "https://github.com/giumacedo/front-end-test#readme",
+  "devDependencies": {
+    "nodemon": "^1.12.6"
+  },
+  "dependencies": {
+    "express": "^4.16.2"
+  }
 }
