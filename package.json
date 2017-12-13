@@ -1,0 +1,19 @@
+{
+  "name": "front-end-test",
+  "version": "1.0.0",
+  "description": "App with react and node",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/giumacedo/front-end-test.git"
+  },
+  "author": "Giulliano Macedo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/giumacedo/front-end-test/issues"
+  },
+  "homepage": "https://github.com/giumacedo/front-end-test#readme"
+}
