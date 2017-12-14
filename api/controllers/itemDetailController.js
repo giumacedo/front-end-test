@@ -31,7 +31,8 @@ exports.item_detail = function (req, res) {
       parseItemData.description = descriptionData.text;
       data.item = parseItemData;
 
-      console.log(data);
+      res.json(data);
+      res.end();
 
     }))
     .catch(error => {
