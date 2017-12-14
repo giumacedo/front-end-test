@@ -1,7 +1,7 @@
 const axios = require('axios');
 const itemModel = require('../model/itemModel');
 
-exports.item_detail = function (req, res) {
+exports.item_detail = (req, res) => {
   let data = {
     author: {
       name: "",
@@ -13,7 +13,7 @@ exports.item_detail = function (req, res) {
       axios.get(`https://api.mercadolibre.com/items/${req.params.id}`),
       axios.get('https://api.mercadolibre.com/items/' + req.params.id + '/description')
     ])
-    .then(axios.spread(function(item, description) {
+    .then(axios.spread((item, description) => {
       let itemData = item.data || [];
       let descriptionData = description.data || [];
       let parseItemData = itemModel.objConstructor(
