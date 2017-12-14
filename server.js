@@ -3,8 +3,10 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 
-const search = require('./api/routes/searchRoute');
-search(app); //register the route
+const searchRoute = require('./api/routes/searchRoute');
+const itemDetail = require("./api/routes/itemDetailRoute");
+searchRoute(app);
+itemDetail(app);
 
 app.listen(port);
 
