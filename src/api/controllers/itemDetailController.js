@@ -1,5 +1,5 @@
 const axios = require('axios');
-const itemModel = require('../model/itemModel');
+const itemModel = require('../utils/itemModel');
 
 exports.item_detail = (req, res) => {
   let data = {

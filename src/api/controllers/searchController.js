@@ -1,5 +1,5 @@
 const axios = require('axios');
-const itemModel = require('../model/itemModel');
+const itemModel = require('../utils/itemModel');
 
 //Number of items that will show up on search list
 const itemsNumber = 4;
