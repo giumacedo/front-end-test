@@ -1,33 +1,25 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from "react-router-dom";
-import axios from 'axios';
+
 
 class Header extends Component {
   state = {
     searchTerm: "",
-    redirect: false,
-    results: []
+    redirect: false
   };
   handleSearchTermChange = event => {
     this.setState({ searchTerm: event.target.value });
   };
   handleClick = searchTerm => {
-    const url = `http://localhost:3000/api/items?q="${searchTerm}`;
-    axios
-      .get(url)
-      .then(response => {
-        const data = {
-          results: response.data
-        };
-        this.setState(data);
-        this.setState({ redirect: true });
-      })
-      .catch(error => console.log(error));
+    if(searchTerm) {
+      this.setState({ redirect: true });
+    }
+
   };
   render() {
     const { redirect } = this.state;
     if (redirect) {
-      return <Redirect to={{ pathname: 'items', search:`?search=${this.state.searchTerm}`, state: { result: this.state.results } }} />;
+      return <Redirect to={{ pathname: '/items', search:`?search=${this.state.searchTerm}`}} />;
     }
     return <header>
         <div>
