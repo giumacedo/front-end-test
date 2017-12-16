@@ -1,10 +1,11 @@
 import React from 'react';
 import Header from './Header';
 
-const Landing = () => (
-  <div className='landing'>
+const Search = () => (
+  <div className='search'>
+    Busca
     <Header />
   </div>
 );
 
-export default Landing;
+export default Search;
