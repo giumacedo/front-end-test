@@ -10,30 +10,33 @@ class Header extends Component {
   handleSearchTermChange = event => {
     this.setState({ searchTerm: event.target.value });
   };
-  handleClick = searchTerm => {
-    if(searchTerm) {
+  handleSearchSubmit = searchTerm => {
+    if (searchTerm) {
       this.setState({ redirect: true });
     }
-
   };
   render() {
     const { redirect } = this.state;
     if (redirect) {
-      return <Redirect to={{ pathname: '/items', search:`?search=${this.state.searchTerm}`}} />;
+      return <Redirect to={{ pathname: "/items", search: `?search=${this.state.searchTerm}` }} />;
     }
-    return <header>
+    return (
+      <header>
         <div>
           <h1>
             <Link to="/">Busca</Link>
           </h1>
           <input onChange={this.handleSearchTermChange} type="search" placeholder="Nunca dejes de buscar" />
-          <button onClick={() => {
-              this.handleClick(this.state.searchTerm);
-            }}>
+          <button
+            onClick={() => {
+              this.handleSearchSubmit(this.state.searchTerm);
+            }}
+          >
             Go
           </button>
         </div>
-      </header>;
+      </header>
+    );
   }
 }
 
