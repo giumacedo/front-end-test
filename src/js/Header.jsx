@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from "react-router-dom";
 import axios from 'axios';
 
 class Header extends Component {
   state = {
-    searchTerm: ""
+    searchTerm: "",
+    redirect: false,
+    results: []
   };
   handleSearchTermChange = event => {
     this.setState({ searchTerm: event.target.value });
@@ -18,21 +20,28 @@ class Header extends Component {
           results: response.data
         };
         this.setState(data);
+        this.setState({ redirect: true });
       })
       .catch(error => console.log(error));
   };
   render() {
-    return (
-      <header>
+    const { redirect } = this.state;
+    if (redirect) {
+      return <Redirect to={{ pathname: 'items', search:`?search=${this.state.searchTerm}`, state: { result: this.state.results } }} />;
+    }
+    return <header>
         <div>
           <h1>
             <Link to="/">Busca</Link>
           </h1>
           <input onChange={this.handleSearchTermChange} type="search" placeholder="Nunca dejes de buscar" />
-          <button onClick={() => { this.handleClick(this.state.searchTerm) }}>Go</button>
+          <button onClick={() => {
+              this.handleClick(this.state.searchTerm);
+            }}>
+            Go
+          </button>
         </div>
-      </header>
-    );
+      </header>;
   }
 }
 
