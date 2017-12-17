@@ -36,13 +36,9 @@ class Header extends Component {
 
 Header.propTypes = {
   searchTerm: PropTypes.string
-  // handleSearchResult: PropTypes.func,
-  // searchPage: PropTypes.bool
 };
 
 Header.defaultProps = {
-  // searchPage: false
-  // handleSearchResult: function noop() {},
   searchTerm: "Nunca dejas de comprar"
 };
 

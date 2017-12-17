@@ -27,12 +27,8 @@ class Search extends Component {
       .catch(error => console.log(error));
   };
   render() {
-    let searchBar;
-    if (this.state.searchTerm.length > 0) {
-      searchBar = <Header searchPage handleSearchResult={this.handleSearchResult} searchTerm={this.state.searchTerm} />;
-    }
     return <div className="main-wrapper">
-        {searchBar}
+        <Header searchTerm={this.state.searchTerm} />;
         <main role="main">
           <section className="ml-main">
             <ol className="wrapper">
