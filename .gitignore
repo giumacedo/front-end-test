@@ -1,5 +1,5 @@
 public/bundle.js
-public/bundle.css
+public/style.css
 node_modules/
 .eslintcache
 coverage/
