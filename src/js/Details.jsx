@@ -31,8 +31,12 @@ class Details extends Component {
           <section className="ml-main">
             <div className="layout-col-left">
               <figure>
-                <img alt={picture} src={picture} />
+                <img data-size="1000x1000" width="500" height="500" alt={picture} src={picture} />
               </figure>
+              <section>
+                <h2>Description del producto</h2>
+                {description}
+              </section>
             </div>
             <div className="layout-col-right">
               <section>
@@ -49,15 +53,10 @@ class Details extends Component {
                   </span>
                 </fieldset>
               </section>
-              <section>
-                <h2>Description del producto</h2>
-                {description}
-              </section>
             </div>
           </section>
-            </main>
-          </div>
-          ;
+        </main>
+      </div>;
   }
 }
 
