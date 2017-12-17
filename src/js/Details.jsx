@@ -40,7 +40,7 @@ class Details extends Component {
         <section className="ml-main">
           <div className="layout-col-left">
             <figure className="item-gallery">
-              <img width="500" height="500" alt={picture} src={picture} />
+              <img width="500" height="500" alt={title} src={picture} />
             </figure>
             {detailDescription}
           </div>
