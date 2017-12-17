@@ -9,11 +9,10 @@ const ReactRouter = require('react-router-dom');
 const cors = require('cors');
 const _ = require('lodash');
 const fs = require('fs');
+const compression = require('compression');
 const App = require('./src/js/App').default;
 
 const StaticRouter = ReactRouter.StaticRouter;
-
-
 const port = 8080;
 const baseTemplate = fs.readFileSync('./index.html');
 const template = _.template(baseTemplate);
@@ -21,6 +20,7 @@ const template = _.template(baseTemplate);
 const server = express();
 server.use(cors());
 
+server.use(compression());
 server.use('/public', express.static('./public'));
 
 const searchRoute = require('./src/api/routes/searchRoute');

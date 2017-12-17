@@ -1,7 +1,7 @@
 const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-module.exports = {
+const config = {
   context: __dirname,
   entry: ["./src/js/ClientApp.jsx", "./src/scss/main.scss"],
   devtool: "cheap-eval-source-map",
@@ -52,3 +52,11 @@ module.exports = {
     })
   ]
 };
+
+if(process.env.NODE_ENV === 'production') {
+  config.entry ='./src/js/App.jsx';
+  config.devtool = false;
+  config.plugins = [];
+}
+
+module.exports = config;
