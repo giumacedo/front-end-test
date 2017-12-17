@@ -30,25 +30,25 @@ class Details extends Component {
         <main role="main">
           <section className="ml-main">
             <div className="layout-col-left">
-              <figure>
-                <img data-size="1000x1000" width="500" height="500" alt={picture} src={picture} />
+              <figure className="item-gallery">
+                <img width="500" height="500" alt={picture} src={picture} />
               </figure>
               <section>
-                <h2>Description del producto</h2>
-                {description}
+                <h2 className="main-section-title">Description del producto</h2>
+                <div className="item-description">{description}</div>
               </section>
             </div>
             <div className="layout-col-right">
               <section>
-                <div>
+                <div className="item-conditions">
                   {condition} - {soldQuantity} vendidos
                 </div>
-                <header>
-                  <h1>{title}</h1>
+                <header className="item-title">
+                  <h1 className="item-title-primary">{title}</h1>
                 </header>
-                <fieldset>
+                <fieldset className="item-price">
                   <span>
-                    <span>{priceCurrency}</span>
+                    <span className="currency">{priceCurrency}</span>
                     <span>{totalPrice}</span>
                   </span>
                 </fieldset>

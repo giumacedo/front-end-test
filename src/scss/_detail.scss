@@ -3,3 +3,59 @@
   float: left;
   min-height: 100px;
 }
+
+.layout-colo-right {
+  width: 35%;
+  position: relative;
+  float: left;
+  min-height: 100px
+}
+
+.item-gallery {
+  margin-bottom: 0;
+  position: relative;
+  width: 100%;
+  min-height: 590px;
+}
+
+.item-title {
+  margin: 15px 0 10px;
+}
+
+.item-title-primary {
+  margin: 0;
+  font-size: 26px;
+  line-height: 1;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item-price {
+  margin: 50px 0;
+  width: 100%;
+  line-height: 0;
+  display: block;
+  font-size: 44px;
+  font-weight: 300;
+  .currency {
+    padding: 0 20px 0 0;
+  }
+}
+
+.main-section-title {
+  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 32px;
+  line-height: 1;
+}
+
+.item-description {
+  font-size: 16px;
+  color: $SilverCalice;
+}
+
+
+
+
+
