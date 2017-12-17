@@ -37,7 +37,7 @@ class Search extends Component {
         <Header searchTerm={this.state.searchTerm} />;
         <main role="main">
           <section className="ml-main">
-            <ol className="wrapper">
+            <ol className="results-wrapper">
               {searchResults}
             </ol>
           </section>
