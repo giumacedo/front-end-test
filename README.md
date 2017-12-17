@@ -11,8 +11,6 @@ NODE v7.4.0
 2 - npm run build -- -p || yarn build -- -p
 3 - npm run start || yarn start
 
-- Build for production:
-yarn production || NODE_ENV=production npm run build -- -p
 
 Run http://localhost:8080/
 
