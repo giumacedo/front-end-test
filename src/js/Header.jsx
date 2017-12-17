@@ -1,44 +1,32 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Header extends Component {
   state = {
-    searchTerm: '',
-    redirect: false
+    searchTerm: ''
   };
   handleSearchTermChange = event => {
     this.setState({ searchTerm: event.target.value });
   };
-  handleSearchSubmit = searchTerm => {
+  handleSearchSubmit = (e, searchTerm) => {
+    e.preventDefault();
     if (searchTerm) {
-      this.setState({ redirect: true });
+      window.location = `/items/?search=${this.state.searchTerm}`;
     }
   };
   render() {
-    let searchButton = <button className="nav-search-btn" onClick={() => {
-          this.handleSearchSubmit(this.state.searchTerm);
-        }}>
-        <i className="fa fa-search" />
-      </button>;
-    if(this.props.searchPage) {
-      searchButton = <button className="nav-search-btn" onClick={() => {
-            this.props.handleSearchResult(this.state.searchTerm);
-          }}>
-          <i className="fa fa-search" />
-        </button>;
-    }
-    const { redirect } = this.state;
-    if (redirect) {
-      return <Redirect to={{ pathname: '/items', search: `?search=${this.state.searchTerm}` }} />;
-    }
     return <header>
         <div role="banner" className="nav-header nav-fix">
           <div className="nav-itens">
             <Link className="nav-logo" to="/" />
-            <form className="nav-search">
+            <form className="nav-search" onSubmit={(e) => {
+                this.handleSearchSubmit(e, this.state.searchTerm);
+              }}>
               <input className="nav-search-input" onChange={this.handleSearchTermChange} type="search" placeholder={this.props.searchTerm} />
-              {searchButton}
+              <button className="nav-search-btn">
+                <i className="fa fa-search" />
+              </button>
             </form>
           </div>
         </div>
@@ -47,14 +35,14 @@ class Header extends Component {
 }
 
 Header.propTypes = {
-  searchTerm: PropTypes.string,
-  handleSearchResult: PropTypes.func,
-  searchPage: PropTypes.bool
+  searchTerm: PropTypes.string
+  // handleSearchResult: PropTypes.func,
+  // searchPage: PropTypes.bool
 };
 
 Header.defaultProps = {
-  searchPage: false,
-  handleSearchResult: function noop() {},
+  // searchPage: false
+  // handleSearchResult: function noop() {},
   searchTerm: "Nunca dejas de comprar"
 };
 
