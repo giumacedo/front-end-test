@@ -4,7 +4,7 @@
   min-height: 100px;
 }
 
-.layout-colo-right {
+.layout-col-right {
   width: 35%;
   position: relative;
   float: left;
@@ -32,7 +32,7 @@
 }
 
 .item-price {
-  margin: 50px 0;
+  margin: 65px 0;
   width: 100%;
   line-height: 0;
   display: block;
@@ -55,6 +55,14 @@
   color: $SilverCalice;
 }
 
+.ui-button-primary {
+  background: #3483fa;
+  width: auto;
+  color: $White;
+  font-size: 15px;
+  padding: 12px 160px;
+  display: inline-block;
+}
 
 
 

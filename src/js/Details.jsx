@@ -52,6 +52,9 @@ class Details extends Component {
                     <span>{totalPrice}</span>
                   </span>
                 </fieldset>
+                <div className="item-actions">
+                  <input value="Comprar" type="submit" className="ui-button-primary"/>
+                </div>
               </section>
             </div>
           </section>
