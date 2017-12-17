@@ -47,7 +47,10 @@ class Details extends Component {
               </span>
             </fieldset>
           </section>
-          <section>{description}</section>
+          <section>
+            <h2>Description del producto</h2>
+            {description}
+          </section>
         </div>
       </div>;
   }
