@@ -6,7 +6,7 @@ const itemsNumber = 4;
 
 exports.list_search = (req, res) => {
 
-  let data = {
+  const data = {
     "author": {
       "name": "",
       "lastName": ""
@@ -23,7 +23,7 @@ exports.list_search = (req, res) => {
       });
 
       filteredItemsByQuantity.map((items) => {
-        let item = items[1];
+        const item = items[1];
         data.categories.push(item.category_id);
         data.items.push(itemModel.objConstructor(
           item.id,

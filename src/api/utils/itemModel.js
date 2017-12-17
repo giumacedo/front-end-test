@@ -1,5 +1,5 @@
 module.exports.objConstructor = (id, title, currency, price, amount, picture, condition, shipping) => {
-  let item = {
+  const item = {
     id: "",
     title: "",
     price: {

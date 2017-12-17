@@ -2,7 +2,7 @@ const axios = require('axios');
 const itemModel = require('../utils/itemModel');
 
 exports.item_detail = (req, res) => {
-  let data = {
+  const data = {
     author: {
       name: "",
       lastName: ""
@@ -11,18 +11,18 @@ exports.item_detail = (req, res) => {
   axios
     .all([
       axios.get(`https://api.mercadolibre.com/items/${req.params.id}`),
-      axios.get('https://api.mercadolibre.com/items/' + req.params.id + '/description')
+      axios.get(`https://api.mercadolibre.com/items/${req.params.id}/description`)
     ])
     .then(axios.spread((item, description) => {
-      let itemData = item.data || [];
-      let descriptionData = description.data || [];
-      let parseItemData = itemModel.objConstructor(
+      const itemData = item.data || [];
+      const descriptionData = description.data || [];
+      const parseItemData = itemModel.objConstructor(
         itemData.id,
         itemData.title,
         itemData.currency_id,
         itemData.price,
         null,
-        itemData.thumbnail,
+        itemData.pictures[0].url,
         itemData.condition,
         itemData.shipping.free_shipping
       );
