@@ -27,12 +27,18 @@ class Search extends Component {
       .catch(error => console.log(error));
   };
   render() {
+    let searchResults;
+    if (this.state.results.length > 0) {
+      searchResults = this.state.results.map(product => <ShelfCard key={product.id} {...product} />);
+    } else {
+      searchResults = <h3> Busca não encontrada</h3>
+    }
     return <div className="main-wrapper">
         <Header searchTerm={this.state.searchTerm} />;
         <main role="main">
           <section className="ml-main">
             <ol className="wrapper">
-              {this.state.results.map(product => <ShelfCard key={product.id} {...product} />)}
+              {searchResults}
             </ol>
           </section>
         </main>
