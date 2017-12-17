@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint **/*.{js,jsx} --quiet",
     "watch": "webpack --watch",
-    "production": "NODE_ENV=prdoction yarn build -- -p",
+    "production": "NODE_ENV=production yarn build -- -p",
     "start": "NODE_ENV=server node server.js"
   },
   "repository": {
