@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from "prop-types";
 import { Link, Redirect } from 'react-router-dom';
 
-
 class Header extends Component {
   state = {
     searchTerm: '',
@@ -58,6 +57,5 @@ Header.defaultProps = {
   handleSearchResult: function noop() {},
   searchTerm: "Nunca dejas de comprar"
 };
-
 
 export default Header

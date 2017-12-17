@@ -3,6 +3,20 @@ $font-stack: Helvetica Neue, Helvetica, sans-serif;
 @import './normalize.scss';
 @import './colors.scss';
 @import './header.scss';
+@import './search-result.scss';
 
+.main-wrapper {
+  background-color: $HintOfRed;
+
+  .ml-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 45px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding: 20px 25px;
+    background-color: $White;
+  }
+}
 
 

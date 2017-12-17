@@ -1,0 +1,43 @@
+.search-results {
+  height: 215px;
+  position: relative;
+  display: block;
+}
+
+.item {
+  box-sizing: border-box;
+
+  &.row-item{
+    height: 100%;
+    display: flex;
+  }
+  .image{
+    border-radius: 4px;
+    display: inline-block;
+    height: 160px;
+    margin: 24px;
+    min-width: 160px;
+    overflow: hidden;
+    width: 160px;
+  }
+  .image-view {
+    width: 160px;
+    height: 160px;
+  }
+
+  .info-container {
+    width: 70%;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    color: $MineShaft;
+  }
+
+  .price-container {
+    font-size: 21px;
+    padding-bottom: 20px;
+    .currency {
+      padding: 0 10px 0 0;
+    }
+  }
+
+}

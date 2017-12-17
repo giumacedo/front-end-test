@@ -25,34 +25,39 @@ class Details extends Component {
     totalPrice = this.state.apiData.price.price;
     soldQuantity = this.state.apiData.sold_quantity;
     }
-    return <div className="details">
+    return <div className="main-wrapper">
         <Header />
-        <div className="layout-col-left">
-          <figure>
-            <img alt={picture} src={picture} />
-          </figure>
-        </div>
-        <div className="layout-col-right">
-          <section>
-            <div>
-              {condition} - {soldQuantity} vendidos
+        <main role="main">
+          <section className="ml-main">
+            <div className="layout-col-left">
+              <figure>
+                <img alt={picture} src={picture} />
+              </figure>
             </div>
-            <header>
-              <h1>{title}</h1>
-            </header>
-            <fieldset>
-              <span>
-                <span>{priceCurrency}</span>
-                <span>{totalPrice}</span>
-              </span>
-            </fieldset>
+            <div className="layout-col-right">
+              <section>
+                <div>
+                  {condition} - {soldQuantity} vendidos
+                </div>
+                <header>
+                  <h1>{title}</h1>
+                </header>
+                <fieldset>
+                  <span>
+                    <span>{priceCurrency}</span>
+                    <span>{totalPrice}</span>
+                  </span>
+                </fieldset>
+              </section>
+              <section>
+                <h2>Description del producto</h2>
+                {description}
+              </section>
+            </div>
           </section>
-          <section>
-            <h2>Description del producto</h2>
-            {description}
-          </section>
-        </div>
-      </div>;
+            </main>
+          </div>
+          ;
   }
 }
 

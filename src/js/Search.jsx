@@ -31,12 +31,16 @@ class Search extends Component {
     if (this.state.searchTerm.length > 0) {
       searchBar = <Header searchPage handleSearchResult={this.handleSearchResult} searchTerm={this.state.searchTerm} />;
     }
-    return (
-      <div className="search">
+    return <div className="main-wrapper">
         {searchBar}
-        <div className="wrapper">{this.state.results.map(product => <ShelfCard key={product.id} {...product} />)}</div>
-      </div>
-    );
+        <main role="main">
+          <section className="ml-main">
+            <ol className="wrapper">
+              {this.state.results.map(product => <ShelfCard key={product.id} {...product} />)}
+            </ol>
+          </section>
+        </main>
+      </div>;
   }
 }
 
