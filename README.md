@@ -7,8 +7,9 @@ giulli.macedo@gmail.com
 #RUNNING
 NODE v7.4.0
 
-- npm install || yarn install
-- npm run start || yarn start
+1 - npm install || yarn install
+2 - npm run build || yarn build
+3 - npm run start || yarn start
 
 - Build for production:
 yarn production || NODE_ENV=production npm run build -- -p
