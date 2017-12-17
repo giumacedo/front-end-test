@@ -16,7 +16,7 @@ class Search extends Component {
     this.handleSearchResult(searchTerm);
   }
   handleSearchResult = (searchTerm) => {
-    const url = `http://localhost:3000/api/items?q='${searchTerm}`;
+    const url = `/api/items?q='${searchTerm}`;
     axios
       .get(url)
       .then(response => {
@@ -34,7 +34,7 @@ class Search extends Component {
       searchResults = <h3> Busca não encontrada</h3>
     }
     return <div className="main-wrapper">
-        <Header searchTerm={this.state.searchTerm} />;
+        <Header searchTerm={this.state.searchTerm} />
         <main role="main">
           <section className="ml-main">
             <ol className="results-wrapper">

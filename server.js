@@ -1,15 +1,51 @@
+/* eslint no-console:0 */
+
+require('babel-register');
 
 const express = require('express');
-const cors = require("cors");
-const app = express();
-app.use(cors());
-const port = process.env.PORT || 3000;
+const React = require('react');
+const ReactDOMServer = require('react-dom/server');
+const ReactRouter = require('react-router-dom');
+const cors = require('cors');
+const _ = require('lodash');
+const fs = require('fs');
+const App = require('./src/js/App').default;
+
+const StaticRouter = ReactRouter.StaticRouter;
+
+
+const port = 8080;
+const baseTemplate = fs.readFileSync('./index.html');
+const template = _.template(baseTemplate);
+
+const server = express();
+server.use(cors());
+
+server.use('/public', express.static('./public'));
 
 const searchRoute = require('./src/api/routes/searchRoute');
-const itemDetail = require("./src/api/routes/itemDetailRoute");
-searchRoute(app);
-itemDetail(app);
+const itemDetail = require('./src/api/routes/itemDetailRoute');
 
-app.listen(port);
+searchRoute(server);
+itemDetail(server);
 
-console.log('server started on: ' + port);
+server.use((req, res) => {
+  const context = {};
+  const body = ReactDOMServer.renderToString(
+    React.createElement(StaticRouter, { location: req.url, context },
+      React.createElement(App)
+    )
+  );
+
+  if (context.url) {
+    res.redirect(context.url);
+  }
+
+  res.write(template({ body }));
+  res.end();
+});
+
+
+server.listen(port);
+
+console.log(`server started on: ${port}`);
