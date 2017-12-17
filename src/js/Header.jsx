@@ -17,16 +17,16 @@ class Header extends Component {
     }
   };
   render() {
-    let searchButton = <button onClick={() => {
+    let searchButton = <button className="nav-search-btn" onClick={() => {
           this.handleSearchSubmit(this.state.searchTerm);
         }}>
-        Go
+        <i className="fa fa-search" />
       </button>;
     if(this.props.searchPage) {
-      searchButton = <button onClick={() => {
+      searchButton = <button className="nav-search-btn" onClick={() => {
             this.props.handleSearchResult(this.state.searchTerm);
           }}>
-          Go
+          <i className="fa fa-search" />
         </button>;
     }
     const { redirect } = this.state;
@@ -34,12 +34,14 @@ class Header extends Component {
       return <Redirect to={{ pathname: '/items', search: `?search=${this.state.searchTerm}` }} />;
     }
     return <header>
-        <div>
-          <h1>
-            <Link to="/">Home</Link>
-          </h1>
-          <input onChange={this.handleSearchTermChange} type="search" placeholder={this.props.searchTerm} />
-          {searchButton}
+        <div role="banner" className="nav-header nav-fix">
+          <div className="nav-itens">
+            <Link className="nav-logo" to="/" />
+            <form className="nav-search">
+              <input className="nav-search-input" onChange={this.handleSearchTermChange} type="search" placeholder={this.props.searchTerm} />
+              {searchButton}
+            </form>
+          </div>
         </div>
       </header>;
   }

@@ -1,0 +1,62 @@
+.nav-header {
+  background: $Gorse;
+
+  .nav-fix {
+    position: fixed;
+    z-index: 900;
+  }
+
+  .nav-logo {
+    background-image: url('../../public/img/logo.png');
+    height: 40px;
+    top: 7px;
+    width: 159px;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    position: absolute;
+    left: 10px;
+  }
+
+  .nav-itens {
+    padding: 0 0 0 220px;
+    height: 54px;
+    position: relative;
+    max-width: 1220px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .nav-search {
+    padding: 7px 5px;
+    overflow: auto;
+    max-width: 910px;
+    height: 54px;
+    position: relative;
+    left: -5px;
+  }
+
+  .nav-search-input {
+    font-size: 16px;
+    padding: 5px 60px 5px 15px;
+    border: 1px solid $Silver;
+    border-radius: 3px;
+    background-color: $White;
+    position: relative;
+    box-sizing: border-box;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  .nav-search-btn {
+    position: absolute;
+    cursor: pointer;
+    top: 7px;
+    right: 5px;
+    width: 46px;
+    height: 40px;
+    border: 1px solid $Silver;
+    border-radius:0 3px 3px 0;
+  }
+
+}
